@@ -317,7 +317,9 @@ strong { color: #fff; font-weight: 700; }
 /* ---------- Back to top ---------- */
 .to-top { position: fixed; right: clamp(18px, 3vw, 36px); bottom: clamp(18px, 3vw, 36px); z-index: 200; display: flex; align-items: center; gap: 9px; padding: 14px 18px; font-family: var(--font-pixel); font-size: 11px; letter-spacing: 1px; color: var(--bg); background: var(--cyan); border: 2px solid var(--cyan); box-shadow: 5px 5px 0 var(--magenta-deep), 0 0 22px rgba(52, 245, 224, 0.45); cursor: pointer; opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none; transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), box-shadow 0.15s var(--ease), background 0.2s; }
 .to-top.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; animation: ttPulse 2.4s ease-in-out infinite; }
-.to-top:hover { background: #fff; border-color: #fff; color: var(--bg); box-shadow: 7px 7px 0 var(--magenta-deep), 0 0 30px rgba(52, 245, 224, 0.7); transform: translate(-2px, -3px) scale(1); animation: none; }
+@media (hover: hover) and (pointer: fine) {
+  .to-top:hover { background: #fff; border-color: #fff; color: var(--bg); box-shadow: 7px 7px 0 var(--magenta-deep), 0 0 30px rgba(52, 245, 224, 0.7); transform: translate(-2px, -3px) scale(1); animation: none; }
+}
 .to-top:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--magenta-deep); }
 .to-top .tt-arrow { font-size: 13px; line-height: 1; }
 @keyframes ttPulse { 0%, 100% { box-shadow: 5px 5px 0 var(--magenta-deep), 0 0 16px rgba(52, 245, 224, 0.35); } 50% { box-shadow: 5px 5px 0 var(--magenta-deep), 0 0 30px rgba(52, 245, 224, 0.8); } }
