@@ -87,7 +87,9 @@ strong { color: var(--magenta); font-weight: 700; }
   transition: background 0.3s, border-color 0.3s; border-bottom: 2px solid transparent;
 }
 .nav.scrolled { background: rgba(10, 10, 24, 0.92); border-bottom-color: var(--line-2); }
-.brand { font-family: var(--font-pixel); font-size: 13px; color: #fff; letter-spacing: 0.5px; }
+.brand { font-family: var(--font-pixel); font-size: 13px; line-height: 1; color: #fff; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 10px; }
+.brand-face { height: 30px; width: 30px; object-fit: contain; image-rendering: auto; filter: drop-shadow(0 0 6px rgba(52, 245, 224, 0.45)); }
+.brand-name { display: inline-block; transform: translateY(3px); }
 .nav-links { display: flex; gap: 26px; }
 .nav-links a { font-size: 13.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); transition: color 0.2s, text-shadow 0.2s; }
 .nav-links a:hover { color: var(--cyan); text-shadow: 0 0 10px var(--cyan); }
@@ -128,6 +130,14 @@ strong { color: var(--magenta); font-weight: 700; }
   97% { opacity: 0; transform: translateX(0); }
 }
 .hero-inner { width: 100%; position: relative; z-index: 1; }
+
+/* pixel mascot standing on the synthwave road, in front of the sun */
+.hero-mascot { position: absolute; z-index: 1; right: clamp(8px, 5vw, 56px); bottom: 6px; pointer-events: none; animation: mascotIn 0.8s var(--ease) 0.35s both; }
+.hero-mascot img { display: block; height: clamp(220px, 33vh, 320px); width: auto; filter: drop-shadow(0 0 18px rgba(52, 245, 224, 0.38)) drop-shadow(0 0 8px rgba(255, 92, 240, 0.28)); }
+.hero-mascot::after { content: ""; position: absolute; left: 50%; bottom: 2px; transform: translateX(-50%); width: 60%; height: 15px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(52, 245, 224, 0.4), rgba(157, 123, 255, 0.18) 45%, transparent 72%); filter: blur(3px); }
+@keyframes mascotIn { from { opacity: 0; transform: translateY(28px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 980px) { .hero-mascot { display: none; } }
+
 
 /* synthwave sun rising behind the hero */
 .sun {
@@ -294,7 +304,11 @@ strong { color: var(--magenta); font-weight: 700; }
 @media (max-width: 880px) { .stack-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 28px; } }
 
 /* ---------- Contact (terminal) ---------- */
-.contact { text-align: center; }
+.contact { text-align: center; position: relative; }
+.contact-mascot { position: absolute; right: clamp(8px, 5vw, 56px); bottom: clamp(60px, 9vh, 100px); z-index: 0; pointer-events: none; }
+.contact-mascot img { display: block; height: clamp(170px, 17vw, 250px); width: auto; filter: drop-shadow(0 0 16px rgba(52, 245, 224, 0.38)) drop-shadow(0 0 8px rgba(255, 92, 240, 0.28)); }
+.contact-mascot::after { content: ""; position: absolute; left: 50%; bottom: 2px; transform: translateX(-50%); width: 60%; height: 14px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(52, 245, 224, 0.4), rgba(157, 123, 255, 0.18) 45%, transparent 72%); filter: blur(3px); }
+@media (max-width: 1040px) { .contact-mascot { display: none; } }
 .contact .sec-label { justify-content: center; }
 .contact-title { font-family: var(--font-pixel); font-size: clamp(17px, 3.6vw, 34px); line-height: 1.45; color: #fff; letter-spacing: 1px; text-shadow: 4px 4px 0 var(--magenta-deep), 0 0 22px rgba(52, 245, 224, 0.5); margin: 6px 0 16px; }
 .contact-sub { color: var(--text); margin-bottom: 36px; font-size: 16px; }
