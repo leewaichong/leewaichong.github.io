@@ -304,8 +304,9 @@ strong { color: #fff; font-weight: 700; }
 .tdot:nth-child(3) { background: var(--violet); }
 .term-name { margin-left: auto; font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
 .term-body { padding: 22px 20px; font-size: 16px; }
-.term-body p { padding: 6px 0; color: var(--text); }
-.term-body .tp { color: var(--cyan); margin-right: 12px; }
+.term-body p { display: flex; align-items: baseline; gap: 12px; padding: 6px 0; color: var(--text); }
+.term-body .tp { color: var(--cyan); flex: none; }
+.term-body .tcmd { min-width: 0; overflow-wrap: anywhere; }
 .term-body a { color: var(--magenta); transition: text-shadow 0.2s; }
 .term-body a:hover { text-shadow: 0 0 12px var(--magenta); }
 .tcaret { color: var(--cyan); animation: blink 1.05s steps(1) infinite; }
@@ -323,6 +324,8 @@ strong { color: #fff; font-weight: 700; }
   .hero { padding-top: 102px; }
   .hero-name { letter-spacing: 0; line-height: 1.5; }
   .hero-actions .btn { padding: 13px 16px; font-size: 10px; }
+  .term-body { padding: 18px 16px; font-size: 14px; }
+  .term-body p { gap: 9px; }
 }
 @media (max-width: 480px) {
   .hero-name { font-size: 19px; }
