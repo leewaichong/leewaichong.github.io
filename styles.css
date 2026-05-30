@@ -263,7 +263,7 @@ strong { color: #fff; font-weight: 700; }
 .edu-card { border: 2px solid var(--line-2); background: var(--panel); box-shadow: 7px 7px 0 var(--violet-deep); padding: 28px 26px; transition: transform 0.14s var(--ease), box-shadow 0.14s var(--ease), border-color 0.2s; }
 .edu-card:hover { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--magenta-deep); border-color: var(--cyan); }
 .edu-when { font-size: 13.5px; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; }
-.edu-card h3 { font-family: var(--font-pixel); font-size: 13px; color: #fff; margin-top: 10px; line-height: 1.5; }
+.edu-card h3 { font-family: var(--font-pixel); font-size: clamp(15px, 1.9vw, 18px); color: #fff; margin-top: 12px; line-height: 1.5; text-shadow: 3px 3px 0 var(--violet-deep), 0 0 16px rgba(52, 245, 224, 0.35); }
 .edu-school { color: var(--muted); font-size: 13.5px; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 .edu-note { color: var(--muted); font-size: 15px; margin-top: 14px; }
 .spec-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 14px; }
@@ -279,7 +279,7 @@ strong { color: #fff; font-weight: 700; }
 
 /* ---------- Toolkit ---------- */
 .stack-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 34px; }
-.stack-col .mini-label { display: block; margin-bottom: 16px; }
+.stack-col .mini-label { display: block; margin-bottom: 14px; padding-bottom: 12px; font-size: 11px; color: var(--cyan); border-bottom: 2px solid var(--line-2); text-shadow: 0 0 12px rgba(52, 245, 224, 0.4); }
 .stack-col ul { list-style: none; }
 .stack-col li { font-size: 14.5px; color: var(--muted); padding: 7px 0; border-bottom: 2px dashed var(--line); text-transform: uppercase; transition: color 0.2s, padding-left 0.2s var(--ease); }
 .stack-col li:hover { color: var(--cyan); padding-left: 6px; }
