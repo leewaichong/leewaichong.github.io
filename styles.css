@@ -314,6 +314,13 @@ strong { color: #fff; font-weight: 700; }
 /* ---------- Footer ---------- */
 .footer { max-width: var(--maxw); margin: 0 auto; padding: 28px clamp(18px, 5vw, 48px) 44px; display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed var(--line); font-size: 12.5px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
 
+/* ---------- Back to top ---------- */
+.to-top { position: fixed; right: clamp(16px, 3vw, 32px); bottom: clamp(16px, 3vw, 32px); z-index: 60; display: flex; align-items: center; gap: 8px; padding: 10px 14px; font-family: var(--font-pixel); font-size: 9px; letter-spacing: 1px; color: var(--cyan); background: var(--bg-2); border: 2px solid var(--cyan); box-shadow: 4px 4px 0 var(--magenta-deep); cursor: pointer; opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.15s var(--ease), background 0.2s; }
+.to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.to-top:hover { background: var(--cyan); color: var(--bg); box-shadow: 6px 6px 0 var(--magenta-deep); transform: translate(-2px, -2px); }
+.to-top .tt-arrow { font-family: var(--font-mono, monospace); font-size: 11px; line-height: 1; }
+@media (max-width: 480px) { .to-top .tt-label { display: none; } .to-top { padding: 11px; } }
+
 @media (max-width: 760px) {
   .sun { opacity: 0.32; right: -22%; top: 5%; }
 }

@@ -67,6 +67,17 @@
     }, { passive: true });
   }
 
+  // Back-to-top button (show after scrolling down a viewport)
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    const onTopScroll = () => toTop.classList.toggle('show', window.scrollY > window.innerHeight * 0.6);
+    onTopScroll();
+    window.addEventListener('scroll', onTopScroll, { passive: true });
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  }
+
   // Smooth anchor scroll
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
